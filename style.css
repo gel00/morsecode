@@ -1,0 +1,98 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding:0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  height: 400px;
+  width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  background-image: url('./img/morse.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  border: 1px solid black;
+}
+.container.active ::after{
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./img/arm.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  animation-name: press;
+  animation-duration: 200ms;
+  animation-iteration-count: infinite;
+}
+
+label,input, #result {
+  display: block;
+  box-sizing: border-box;
+  margin: 10px;
+  width: 200px;
+}
+.beep {
+  display: none;
+}
+
+.active .beep {
+  display: block;
+  font-family: 'Indie Flower', cursive;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  color: white;
+  font-size: 28px;
+  transform: rotateZ(-10deg);
+  animation-name: beep;
+  
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+.active .beep2{
+  animation-delay: 500ms;
+  transform: rotateZ(10deg);
+  font-size: 22px;
+  top: 30%;
+  right: 35%;
+}
+.active .beep3{
+  animation-delay: 300ms;
+  transform: rotateZ(-15deg);
+  font-size: 16px;
+  top: 24%;
+  right: 42%;
+}
+#result{
+  
+  height: 300px;
+  border: 1px solid black;
+}
+
+@keyframes beep {
+  0%   {opacity: 0}
+  49%   {opacity: 0}
+  50%  {opacity: 1}
+  100% {opacity: 1}
+}
+
+@keyframes press {
+  0%   {opacity: 0}
+  49%   {opacity: 0}
+  50%  {opacity: 1}
+  100% {opacity: 1}
+}
