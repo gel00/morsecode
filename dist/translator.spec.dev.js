@@ -2,8 +2,8 @@
 
 var _translator = require("./translator.js");
 
-it('should translate code . _ to letter a', function () {
-  var result = (0, _translator.translateMorseToEnglish)('. _');
+it('should translate code .- to letter a', function () {
+  var result = (0, _translator.translateMorseToEnglish)('.-');
   expect(result).toBe('a');
 }); //test invalid inputs
 
@@ -16,12 +16,12 @@ it('should translate aa to invalid input', function () {
   expect(result).toBe('invalid input');
 }); //test null/empty-string input
 
-it('should return true to ._.  ._', function () {
-  var result = (0, _translator.isMorse)('._.._');
+it('should return true to .-.  .-', function () {
+  var result = (0, _translator.isMorse)('.-..-');
   expect(result).toBe(true);
 });
-it('should return false to .A.._', function () {
-  var result = (0, _translator.isMorse)('._A.._');
+it('should return false to .-A..-', function () {
+  var result = (0, _translator.isMorse)('.-A..-');
   expect(result).toBe(false);
 });
 it('should return "invalid input" to null ', function () {
@@ -32,15 +32,15 @@ it('should translate "" to ""', function () {
   var result = (0, _translator.translate)('');
   expect(result).toBe('');
 });
-it('should translate "_ . _ .   _ _ _   _ _ _   . _ . ." to "cool"', function () {
-  var result = (0, _translator.translate)('_ . _ .   _ _ _   _ _ _   . _ . .');
+it('should translate "-.-. --- --- .-.." to "cool"', function () {
+  var result = (0, _translator.translate)('-.-. --- --- .-..');
   expect(result).toBe('cool');
 });
-it('should translate awesome" to ". _   . _ _   .   . . .   _ _ _   _ _   ."', function () {
+it('should translate awesome" to ".- .-- . ... --- -- ."', function () {
   var result = (0, _translator.translate)('awesome');
-  expect(result).toBe('. _   . _ _   .   . . .   _ _ _   _ _   .');
+  expect(result).toBe('.- .-- . ... --- -- .');
 });
-it('should translate aWeSoMe" to ". _   . _ _   .   . . .   _ _ _   _ _   ."', function () {
+it('should translate aWeSoMe" to ".- .-- . ... --- -- ."', function () {
   var result = (0, _translator.translate)('aWeSoMe');
-  expect(result).toBe('. _   . _ _   .   . . .   _ _ _   _ _   .');
+  expect(result).toBe('.- .-- . ... --- -- .');
 });

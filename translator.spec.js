@@ -2,8 +2,8 @@ import {translateMorseToEnglish,translateEnglishToMorse,isMorse,translate} from 
 
 
 
-it ('should translate code . _ to letter a', ()=>{
-  const result = translateMorseToEnglish('. _')  ;
+it ('should translate code .- to letter a', ()=>{
+  const result = translateMorseToEnglish('.-')  ;
   expect (result).toBe('a');
 });
 
@@ -23,14 +23,14 @@ it ('should translate aa to invalid input', ()=>{
 
 
 
-it ('should return true to ._.  ._', ()=>{
-  const result = isMorse('._.._');
+it ('should return true to .-.  .-', ()=>{
+  const result = isMorse('.-..-');
   expect (result).toBe(true);
 });
 
 
-it ('should return false to .A.._', ()=>{
-  const result = isMorse('._A.._');
+it ('should return false to .-A..-', ()=>{
+  const result = isMorse('.-A..-');
   expect (result).toBe(false);
 });
 
@@ -44,16 +44,16 @@ it ('should translate "" to ""', ()=>{
   expect (result).toBe('');
 })
 
-it ('should translate "_ . _ .   _ _ _   _ _ _   . _ . ." to "cool"', ()=>{
-  const result = translate('_ . _ .   _ _ _   _ _ _   . _ . .');
+it ('should translate "-.-. --- --- .-.." to "cool"', ()=>{
+  const result = translate('-.-. --- --- .-..');
   expect (result).toBe('cool');
 })
 
-it ('should translate awesome" to ". _   . _ _   .   . . .   _ _ _   _ _   ."', ()=>{
+it ('should translate awesome" to ".- .-- . ... --- -- ."', ()=>{
   const result = translate('awesome');
-  expect (result).toBe('. _   . _ _   .   . . .   _ _ _   _ _   .');
+  expect (result).toBe('.- .-- . ... --- -- .');
 })
-it ('should translate aWeSoMe" to ". _   . _ _   .   . . .   _ _ _   _ _   ."', ()=>{
+it ('should translate aWeSoMe" to ".- .-- . ... --- -- ."', ()=>{
   const result = translate('aWeSoMe');
-  expect (result).toBe('. _   . _ _   .   . . .   _ _ _   _ _   .');
+  expect (result).toBe('.- .-- . ... --- -- .');
 })
