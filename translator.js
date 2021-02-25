@@ -71,7 +71,7 @@ export const translate = (str)=>{
         result += translateEnglishToMorse(letter);
       });
     }
-    return result;
+    return result.replace(/invalid input/g,"");
   } else {
     return 'invalid input';
   }
