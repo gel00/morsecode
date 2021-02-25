@@ -1,5 +1,3 @@
-
-
 const en_morse_abc = {
   a : '.-',
   b : '-...',
